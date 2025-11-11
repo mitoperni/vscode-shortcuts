@@ -1,13 +1,16 @@
 {
   "common": {
-    "appTitle": "Atajos VS Code Bootcamp",
+    "appTitle": "Atajos Dev",
     "search": "Buscar atajo o comando...",
     "windows": "Windows",
     "mac": "Mac",
     "darkMode": "Modo Oscuro",
-    "lightMode": "Modo Claro"
+    "lightMode": "Modo Claro",
+    "results": "resultados",
+    "noResults": "No se encontraron resultados"
   },
   "navigation": {
+    "home": "Inicio",
     "shortcuts": "Atajos VS Code",
     "git": "Comandos Git",
     "practice": "Modo Práctica"
@@ -428,6 +431,33 @@
     "favorites": "Favoritos",
     "learned": "Aprendidos",
     "progress": "Progreso"
+  },
+  "home": {
+    "hero": {
+      "title": "Atajos de VS Code y Comandos Git",
+      "subtitle": "Una colección de atajos de teclado y comandos de Git para Windows y Mac",
+      "learnShortcuts": "Aprender Atajos",
+      "gitCommands": "Comandos Git",
+      "practiceMode": "Modo Práctica"
+    },
+    "features": {
+      "shortcuts": {
+        "title": "88 Atajos de VS Code",
+        "description": "Colección completa de atajos de teclado para Windows y Mac"
+      },
+      "git": {
+        "title": "51 Comandos Git",
+        "description": "Comandos Git esenciales organizados por categoría"
+      },
+      "practice": {
+        "title": "Práctica Interactiva",
+        "description": "Pon a prueba tu conocimiento con el modo práctica"
+      },
+      "bilingual": {
+        "title": "Soporte Bilingüe",
+        "description": "Disponible en inglés y español"
+      }
+    }
   },
   "footer": {
     "madeWith": "Hecho con ❤️ para Bootcamp Full Stack 2025",

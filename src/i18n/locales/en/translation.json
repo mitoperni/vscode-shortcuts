@@ -1,13 +1,16 @@
 {
   "common": {
-    "appTitle": "VS Code Shortcuts Bootcamp",
+    "appTitle": "Dev Shortcuts",
     "search": "Search shortcuts or commands...",
     "windows": "Windows",
     "mac": "Mac",
     "darkMode": "Dark Mode",
-    "lightMode": "Light Mode"
+    "lightMode": "Light Mode",
+    "results": "results",
+    "noResults": "No results found"
   },
   "navigation": {
+    "home": "Home",
     "shortcuts": "VS Code Shortcuts",
     "git": "Git Commands",
     "practice": "Practice Mode"
@@ -428,6 +431,33 @@
     "favorites": "Favorites",
     "learned": "Learned",
     "progress": "Progress"
+  },
+  "home": {
+    "hero": {
+      "title": "VS Code Shortcuts and Git Commands",
+      "subtitle": "A collection of keyboard shortcuts and Git commands for Windows and Mac",
+      "learnShortcuts": "Learn Shortcuts",
+      "gitCommands": "Git Commands",
+      "practiceMode": "Practice Mode"
+    },
+    "features": {
+      "shortcuts": {
+        "title": "88 VS Code Shortcuts",
+        "description": "Complete collection of keyboard shortcuts for Windows and Mac"
+      },
+      "git": {
+        "title": "51 Git Commands",
+        "description": "Essential Git commands organized by category"
+      },
+      "practice": {
+        "title": "Interactive Practice",
+        "description": "Test your knowledge with practice mode"
+      },
+      "bilingual": {
+        "title": "Bilingual Support",
+        "description": "Available in English and Spanish"
+      }
+    }
   },
   "footer": {
     "madeWith": "Made with ❤️ for Full Stack Bootcamp 2025",
