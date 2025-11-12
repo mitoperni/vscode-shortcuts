@@ -11,30 +11,20 @@ export const useAppContext = () => {
 }
 
 export const AppProvider = ({ children }) => {
-  // UI States
-  const [os, setOs] = useState('windows')
+  // UI States - Initialize directly from localStorage to prevent flash
+  const [os, setOs] = useState(() => {
+    return localStorage.getItem('os') || 'windows'
+  })
 
   // User Data States (saved to LocalStorage)
-  const [favorites, setFavorites] = useState([])
+  const [favorites, setFavorites] = useState(() => {
+    return JSON.parse(localStorage.getItem('favorites') || '[]')
+  })
 
   // Practice Mode States
-  const [practiceStats, setPracticeStats] = useState({ correct: 0, total: 0 })
-
-  // Force dark theme always
-  useEffect(() => {
-    document.documentElement.setAttribute('data-bs-theme', 'dark')
-  }, [])
-
-  // Load from LocalStorage on mount
-  useEffect(() => {
-    const savedOS = localStorage.getItem('os') || 'windows'
-    const savedFavorites = JSON.parse(localStorage.getItem('favorites') || '[]')
-    const savedPracticeStats = JSON.parse(localStorage.getItem('practiceStats') || '{"correct":0,"total":0}')
-
-    setOs(savedOS)
-    setFavorites(savedFavorites)
-    setPracticeStats(savedPracticeStats)
-  }, [])
+  const [practiceStats, setPracticeStats] = useState(() => {
+    return JSON.parse(localStorage.getItem('practiceStats') || '{"correct":0,"total":0}')
+  })
 
   useEffect(() => {
     localStorage.setItem('os', os)

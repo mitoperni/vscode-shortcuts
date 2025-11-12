@@ -24,8 +24,9 @@ Interactive web application to learn VS Code keyboard shortcuts and Git commands
 
 ### Customization
 - 🌐 **Bilingual** - Full support for English and Spanish
-- 🌓 **Dark/Light Theme** - Choose your preferred mode
+- 🌑 **Dark Theme** - Professional dark mode interface
 - 💾 **Local Storage** - Your preferences persist
+- 🔄 **Smart Sorting** - Shortcuts sorted by relevance by default
 
 ### Design
 - 📱 **Responsive** - Works on mobile, tablet, and desktop
@@ -132,27 +133,57 @@ This application is perfect for:
 ```
 vscode-shortcuts-bootcamp/
 ├── src/
-│   ├── i18n/
-│   │   ├── config.js                 # i18next configuration
+│   ├── components/           # React components
+│   │   ├── Layout.jsx        # Main layout with navigation
+│   │   ├── shortcuts/        # Shortcuts-related components
+│   │   │   ├── ShortcutCard.jsx
+│   │   │   └── filters/      # Filter components
+│   │   │       ├── SearchBar.jsx
+│   │   │       ├── FilterControls.jsx
+│   │   │       ├── CategoryFilters.jsx
+│   │   │       └── ActiveFilters.jsx
+│   │   ├── git/              # Git commands components
+│   │   │   ├── GitCommand.jsx
+│   │   │   └── GitWorkflow.jsx
+│   │   └── practice/         # Practice mode components
+│   │       └── PracticeQuestion.jsx
+│   ├── context/              # React Context
+│   │   └── AppContext.jsx    # Global state management
+│   ├── data/                 # Data files
+│   │   ├── shortcutsData.js  # All VS Code shortcuts
+│   │   └── gitData.js        # All Git commands
+│   ├── hooks/                # Custom React hooks
+│   │   ├── useShortcutsFilter.js
+│   │   └── usePractice.js
+│   ├── i18n/                 # Internationalization
+│   │   ├── config.js         # i18next configuration
 │   │   └── locales/
 │   │       ├── en/
-│   │       │   └── translation.json  # English translations
+│   │       │   └── translation.json
 │   │       └── es/
-│   │           └── translation.json  # Spanish translations
-│   ├── App.jsx                       # Main React component
-│   ├── App.css                       # Styles
-│   └── main.jsx                      # Entry point
-├── index.html                        # HTML template
-├── package.json                      # Dependencies
-├── vite.config.js                    # Vite configuration
-└── README.md                         # This file
+│   │           └── translation.json
+│   ├── pages/                # Page components
+│   │   ├── Home.jsx
+│   │   ├── Shortcuts.jsx
+│   │   ├── Git.jsx
+│   │   └── Practice.jsx
+│   ├── styles/               # CSS files
+│   │   └── main.css          # Unified styles
+│   ├── utils/                # Utility functions
+│   │   └── categoryIcons.js  # Category icon mappings
+│   ├── App.jsx               # Main App component
+│   └── main.jsx              # Entry point
+├── index.html                # HTML template
+├── package.json              # Dependencies
+├── vite.config.js            # Vite configuration
+└── README.md                 # This file
 ```
 
 ## 🎨 Customization
 
 ### Adding New Shortcuts
 
-Edit `src/App.jsx` and add to the `shortcutsData` object:
+Edit `src/data/shortcutsData.js` and add to the `shortcutsData` array:
 
 ```javascript
 {
@@ -160,11 +191,12 @@ Edit `src/App.jsx` and add to the `shortcutsData` object:
   action: 'myShortcut',
   windows: 'Ctrl+Alt+N',
   mac: '⌥⌘N',
-  category: 'category'
+  category: 'category',
+  relevance: 5  // 1-10, higher = more important
 }
 ```
 
-Then add translations to both translation files:
+Then add translations to both translation files in `src/i18n/locales/`:
 
 ```json
 {
@@ -179,7 +211,7 @@ Then add translations to both translation files:
 
 ### Adding New Git Commands
 
-Edit `src/App.jsx` and add to the `gitCommands` object:
+Edit `src/data/gitData.js` and add to the appropriate category in `gitCommands`:
 
 ```javascript
 {
@@ -188,7 +220,7 @@ Edit `src/App.jsx` and add to the `gitCommands` object:
 }
 ```
 
-Add translation:
+Add translation to `src/i18n/locales/en/translation.json` and `es/translation.json`:
 
 ```json
 {
@@ -200,16 +232,19 @@ Add translation:
 }
 ```
 
-### Changing Colors
+### Customizing Styles
 
-Edit CSS variables in `src/App.css`:
+Edit `src/styles/main.css` to customize the appearance. The app uses Bootstrap 5.3 with dark theme enabled by default in `index.html`:
 
-```css
-:root {
-  --accent-light: #0d6efd;  /* Change this */
-  --accent-dark: #007acc;   /* And this */
-}
+```html
+<html lang="en" data-bs-theme="dark">
 ```
+
+### Adding New Categories
+
+1. Add the category to `src/data/shortcutsData.js` in the `categories` array
+2. Add translations for the category in both language files
+3. Add a category icon in `src/utils/categoryIcons.js`
 
 ## 🌐 Deployment
 
@@ -310,13 +345,16 @@ If you have questions or need help:
 - Efficient workflow practices
 
 #### Analyzing the Code:
-- React Hooks (useState, useEffect)
-- State management
-- LocalStorage API
+- React Hooks (useState, useEffect, useMemo)
+- Context API for global state management
+- Custom hooks for business logic
+- LocalStorage API with lazy initialization
+- React Router v6 for navigation
 - i18next internationalization
 - Bootstrap 5.3 with dark mode
 - Responsive design
-- Component structure
+- Component-based architecture
+- Separation of concerns (data, logic, UI)
 
 ## 💡 Tips for Students
 
@@ -346,6 +384,16 @@ Potential features for future versions:
 
 ## 📈 Version History
 
+### v1.1.0 (2025-01-12)
+- Refactored to professional component architecture
+- Added React Router for navigation
+- Implemented Context API for state management
+- Added custom hooks for business logic
+- Improved performance with lazy initialization
+- Fixed page load flash issue
+- Default sorting by relevance
+- Enhanced code organization and maintainability
+
 ### v1.0.0 (2025-01-11)
 - Initial release
 - 88 VS Code shortcuts
@@ -353,7 +401,7 @@ Potential features for future versions:
 - Bilingual support (EN/ES)
 - Practice mode
 - Favorites and progress tracking
-- Dark/light theme
+- Dark theme
 - Responsive design
 
 ---

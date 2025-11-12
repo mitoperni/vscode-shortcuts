@@ -23,24 +23,6 @@ kbd {
   color: inherit;
 }
 
-/* ==================== Git Commands Display ==================== */
-.git-command {
-  display: block;
-  text-align: center;
-  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', 'Consolas', 'Courier New', monospace;
-  font-size: 1rem;
-  font-weight: 600;
-  padding: 0.75rem 1rem;
-  background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
-  color: white;
-  border: none;
-  border-radius: 6px;
-  letter-spacing: 0.5px;
-  line-height: 1.6;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  word-break: break-word;
-}
-
 /* ==================== Learnt Shortcuts ==================== */
 .learnt-shortcut {
   opacity: 0.6;

@@ -1,9 +1,13 @@
-import { useTranslation } from 'react-i18next'
-import PropTypes from 'prop-types'
-import { getCategoryIcon } from '../../../utils/categoryIcons'
+import { useTranslation } from "react-i18next";
+import PropTypes from "prop-types";
+import { getCategoryIcon } from "../../../utils/categoryIcons";
 
-const CategoryFilters = ({ categories, selectedCategory, onSelectCategory }) => {
-  const { t } = useTranslation()
+const CategoryFilters = ({
+  categories,
+  selectedCategory,
+  onSelectCategory,
+}) => {
+  const { t } = useTranslation();
 
   return (
     <div className="mb-3">
@@ -23,12 +27,12 @@ const CategoryFilters = ({ categories, selectedCategory, onSelectCategory }) => 
       </div>
     </div>
   );
-}
+};
 
 CategoryFilters.propTypes = {
   categories: PropTypes.arrayOf(PropTypes.string).isRequired,
   selectedCategory: PropTypes.string.isRequired,
-  onSelectCategory: PropTypes.func.isRequired
-}
+  onSelectCategory: PropTypes.func.isRequired,
+};
 
-export default CategoryFilters
+export default CategoryFilters;

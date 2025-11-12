@@ -6,7 +6,7 @@ export const useShortcutsFilter = (favorites) => {
   const { t } = useTranslation()
   const [searchTerm, setSearchTerm] = useState('')
   const [selectedCategory, setSelectedCategory] = useState('all')
-  const [sortBy, setSortBy] = useState('category')
+  const [sortBy, setSortBy] = useState('relevance')
   const [showFilters, setShowFilters] = useState(false)
 
   // Filter shortcuts
