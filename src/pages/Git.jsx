@@ -17,7 +17,7 @@ const Git = () => {
       {Object.entries(gitCommands).map(([category, commands]) => (
         <div key={category} className="mb-5">
           {/* Category Title */}
-          <h4 className="mb-3 fw-bold text-primary border-bottom pb-2">
+          <h4 className="mb-3 fw-bold text-light border-bottom pb-2">
             {t(`git.categories.${category}`)}
           </h4>
 
