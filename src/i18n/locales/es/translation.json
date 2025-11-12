@@ -18,7 +18,6 @@
   "filters": {
     "all": "Todos",
     "favorites": "Favoritos",
-    "learnt": "Aprendidos",
     "essentials": "Esenciales",
     "editing": "Edición",
     "navigation": "Navegación",
@@ -428,19 +427,13 @@
     }
   },
   "stats": {
-    "favorites": "Favoritos",
-    "learnt": "Aprendidos",
-    "progress": "Progreso"
-  },
-  "buttons": {
-    "learn": "Aprender",
-    "learnt": "Aprendido"
+    "favorites": "Favoritos guardados"
   },
   "home": {
     "hero": {
       "title": "Atajos de VS Code y Comandos Git",
       "subtitle": "Una colección de atajos de teclado y comandos de Git para Windows y Mac",
-      "learnShortcuts": "Aprender Atajos",
+      "learnShortcuts": "Ver Atajos",
       "gitCommands": "Comandos Git",
       "practiceMode": "Modo Práctica"
     },
@@ -465,6 +458,6 @@
   },
   "footer": {
     "madeWith": "Hecho con ❤️ para Bootcamp Full Stack 2025",
-    "tip": "💡 Consejo: Practica estos atajos diariamente para dominarlos"
+    "tip": "💡 Consejo: Guarda tus atajos favoritos para acceder rápidamente"
   }
 }

@@ -18,7 +18,6 @@
   "filters": {
     "all": "All",
     "favorites": "Favorites",
-    "learnt": "Learnt",
     "essentials": "Essentials",
     "editing": "Editing",
     "navigation": "Navigation",
@@ -428,19 +427,13 @@
     }
   },
   "stats": {
-    "favorites": "Favorites",
-    "learnt": "Learnt",
-    "progress": "Progress"
-  },
-  "buttons": {
-    "learn": "Learn",
-    "learnt": "Learnt"
+    "favorites": "Saved Favorites"
   },
   "home": {
     "hero": {
       "title": "VS Code Shortcuts and Git Commands",
       "subtitle": "A collection of keyboard shortcuts and Git commands for Windows and Mac",
-      "learnShortcuts": "Learn Shortcuts",
+      "learnShortcuts": "View Shortcuts",
       "gitCommands": "Git Commands",
       "practiceMode": "Practice Mode"
     },
@@ -465,6 +458,6 @@
   },
   "footer": {
     "madeWith": "Made with ❤️ for Full Stack Bootcamp 2025",
-    "tip": "💡 Tip: Practice these shortcuts daily to master them"
+    "tip": "💡 Tip: Save your favorite shortcuts for quick access"
   }
 }
