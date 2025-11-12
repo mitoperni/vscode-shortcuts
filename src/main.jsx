@@ -14,7 +14,6 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 
 // Custom styles - unified CSS file
 import './styles/main.css'
-import './styles/shortcuts.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
