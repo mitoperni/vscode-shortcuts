@@ -5,7 +5,6 @@ import Home from './pages/Home'
 import Shortcuts from './pages/Shortcuts'
 import Git from './pages/Git'
 import Practice from './pages/Practice'
-import './styles/App.css'
 
 /**
  * VS Code Shortcuts Bootcamp - Refactored Application

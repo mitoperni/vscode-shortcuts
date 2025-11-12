@@ -7,10 +7,10 @@ import { Keyboard, GitBranch, Gamepad2, Globe, BookOpen } from 'lucide-react'
 
 const Home = () => {
   const { t } = useTranslation()
-  const { favorites, learned, practiceStats } = useAppContext()
+  const { favorites, learnt, practiceStats } = useAppContext()
 
   const totalShortcuts = getAllShortcuts().length
-  const progressPercentage = Math.round((learned.length / totalShortcuts) * 100)
+  const progressPercentage = Math.round((learnt.length / totalShortcuts) * 100)
   const practiceAccuracy = practiceStats.total > 0
     ? Math.round((practiceStats.correct / practiceStats.total) * 100)
     : 0

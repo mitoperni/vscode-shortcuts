@@ -17,7 +17,7 @@ export const AppProvider = ({ children }) => {
 
   // User Data States (saved to LocalStorage)
   const [favorites, setFavorites] = useState([])
-  const [learned, setLearned] = useState([])
+  const [learnt, setLearnt] = useState([])
 
   // Practice Mode States
   const [practiceStats, setPracticeStats] = useState({ correct: 0, total: 0 })
@@ -27,13 +27,13 @@ export const AppProvider = ({ children }) => {
     const savedTheme = localStorage.getItem('theme') || 'dark'
     const savedOS = localStorage.getItem('os') || 'windows'
     const savedFavorites = JSON.parse(localStorage.getItem('favorites') || '[]')
-    const savedLearned = JSON.parse(localStorage.getItem('learned') || '[]')
+    const savedLearnt = JSON.parse(localStorage.getItem('learnt') || '[]')
     const savedPracticeStats = JSON.parse(localStorage.getItem('practiceStats') || '{"correct":0,"total":0}')
 
     setTheme(savedTheme)
     setOs(savedOS)
     setFavorites(savedFavorites)
-    setLearned(savedLearned)
+    setLearnt(savedLearnt)
     setPracticeStats(savedPracticeStats)
   }, [])
 
@@ -52,8 +52,8 @@ export const AppProvider = ({ children }) => {
   }, [favorites])
 
   useEffect(() => {
-    localStorage.setItem('learned', JSON.stringify(learned))
-  }, [learned])
+    localStorage.setItem('learnt', JSON.stringify(learnt))
+  }, [learnt])
 
   useEffect(() => {
     localStorage.setItem('practiceStats', JSON.stringify(practiceStats))
@@ -68,8 +68,8 @@ export const AppProvider = ({ children }) => {
     )
   }
 
-  const toggleLearned = (shortcutId) => {
-    setLearned(prev =>
+  const toggleLearnt = (shortcutId) => {
+    setLearnt(prev =>
       prev.includes(shortcutId)
         ? prev.filter(id => id !== shortcutId)
         : [...prev, shortcutId]
@@ -88,17 +88,17 @@ export const AppProvider = ({ children }) => {
     theme,
     os,
     favorites,
-    learned,
+    learnt,
     practiceStats,
     // Setters
     setTheme,
     setOs,
     setFavorites,
-    setLearned,
+    setLearnt,
     setPracticeStats,
     // Actions
     toggleFavorite,
-    toggleLearned,
+    toggleLearnt,
     updatePracticeStats
   }
 

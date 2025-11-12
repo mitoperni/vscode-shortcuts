@@ -4,16 +4,16 @@ import PropTypes from 'prop-types'
 
 const ShortcutCard = ({ shortcut }) => {
   const { t } = useTranslation()
-  const { os, favorites, learned, toggleFavorite, toggleLearned } = useAppContext()
+  const { os, favorites, learnt, toggleFavorite, toggleLearnt } = useAppContext()
 
   const isFavorite = favorites.includes(shortcut.id)
-  const isLearned = learned.includes(shortcut.id)
+  const isLearnt = learnt.includes(shortcut.id)
 
   return (
-    <div className={`card h-100 shortcut-card ${isLearned ? 'learned-shortcut' : ''}`}>
+    <div className={`card h-100 shortcut-card ${isLearnt ? 'learnt-shortcut' : ''}`}>
       <div className="card-body">
-        {/* Keyboard Shortcut - Most Important */}
-        <div className="shortcut-key">
+        {/* Keyboard Shortcut */}
+        <div>
           <kbd className="user-select-all">
             {os === 'windows' ? shortcut.windows : shortcut.mac}
           </kbd>
@@ -24,18 +24,18 @@ const ShortcutCard = ({ shortcut }) => {
           <h6 className="mb-0 flex-grow-1">{t(`shortcuts.${shortcut.action}`)}</h6>
           <div className="d-flex gap-2">
             <button
-              className="btn btn-link p-0 favorite-btn"
+              className="btn btn-outline-warning px-2"
               onClick={() => toggleFavorite(shortcut.id)}
               aria-label={isFavorite ? 'Remove from favorites' : 'Add to favorites'}
             >
               {isFavorite ? '⭐' : '☆'}
             </button>
             <button
-              className="btn btn-link p-0 learned-btn"
-              onClick={() => toggleLearned(shortcut.id)}
-              aria-label={isLearned ? 'Mark as not learned' : 'Mark as learned'}
+              className={`btn btn-sm ${isLearnt ? 'btn-success' : 'btn-outline-secondary'}`}
+              onClick={() => toggleLearnt(shortcut.id)}
+              aria-label={isLearnt ? 'Mark as not learnt' : 'Mark as learnt'}
             >
-              {isLearned ? '✅' : '⬜'}
+              {isLearnt ? t('buttons.learnt') : t('buttons.learn')}
             </button>
           </div>
         </div>

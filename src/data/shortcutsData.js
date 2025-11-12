@@ -131,10 +131,10 @@ export const getShortcutsByCategory = (category) => {
 /**
  * Get count of shortcuts in a category
  */
-export const getCategoryCount = (category, favorites = [], learned = []) => {
+export const getCategoryCount = (category, favorites = [], learnt = []) => {
   if (category === 'all') return getAllShortcuts().length
   if (category === 'favorites') return favorites.length
-  if (category === 'learned') return learned.length
+  if (category === 'learnt') return learnt.length
   return getAllShortcuts().filter(s => s.category === category).length
 }
 
@@ -144,7 +144,7 @@ export const getCategoryCount = (category, favorites = [], learned = []) => {
 export const categories = [
   'all',
   'favorites',
-  'learned',
+  'learnt',
   'essentials',
   'editing',
   'navigation',

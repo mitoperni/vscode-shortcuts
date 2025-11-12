@@ -12,8 +12,8 @@ import 'bootstrap-icons/font/bootstrap-icons.css'
 // Bootstrap JS (for interactive components)
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 
-// Custom styles
-import './styles/App.css'
+// Custom styles - unified CSS file
+import './styles/main.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

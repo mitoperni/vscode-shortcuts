@@ -18,7 +18,7 @@
   "filters": {
     "all": "All",
     "favorites": "Favorites",
-    "learned": "Learned",
+    "learnt": "Learnt",
     "essentials": "Essentials",
     "editing": "Editing",
     "navigation": "Navigation",
@@ -429,8 +429,12 @@
   },
   "stats": {
     "favorites": "Favorites",
-    "learned": "Learned",
+    "learnt": "Learnt",
     "progress": "Progress"
+  },
+  "buttons": {
+    "learn": "Learn",
+    "learnt": "Learnt"
   },
   "home": {
     "hero": {

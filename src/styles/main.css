@@ -1,0 +1,189 @@
+/**
+ * VS Code Shortcuts Bootcamp - Unified Styles
+ * Minimal custom CSS leveraging Bootstrap utilities
+ */
+
+/* ==================== Global Transitions ==================== */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* ==================== Keyboard Shortcuts Display ==================== */
+kbd {
+  display: block;
+  text-align: center;
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', 'Consolas', 'Courier New', monospace;
+  font-size: 2rem !important;
+  font-weight: 700;
+  padding: 0.5rem 2rem !important;
+  letter-spacing: 2px;
+  line-height: 1.5;
+  background: none;
+  border: none;
+  color: inherit;
+}
+
+/* ==================== Git Commands Display ==================== */
+.git-command {
+  display: block;
+  text-align: center;
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', 'Consolas', 'Courier New', monospace;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.75rem 1rem;
+  background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  letter-spacing: 0.5px;
+  line-height: 1.6;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  word-break: break-word;
+}
+
+[data-bs-theme="light"] .git-command {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* ==================== Learnt Shortcuts ==================== */
+.learnt-shortcut {
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.learnt-shortcut:hover {
+  opacity: 1;
+}
+
+/* ==================== Interactive Buttons ==================== */
+.favorite-btn,
+.learnt-btn {
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.favorite-btn:hover,
+.learnt-btn:hover {
+  transform: scale(1.2);
+}
+
+/* ==================== Git Workflow Numbered List ==================== */
+.workflow-list {
+  list-style: none;
+  counter-reset: workflow-counter;
+  padding-left: 0;
+}
+
+.workflow-list li {
+  counter-increment: workflow-counter;
+  margin-bottom: 1.5rem;
+  padding-left: 3.5rem;
+  position: relative;
+}
+
+.workflow-list li::before {
+  content: counter(workflow-counter);
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* ==================== Practice Mode Animation ==================== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.practice-feedback {
+  animation: fadeIn 0.3s ease;
+}
+
+/* ==================== Custom Scrollbar ==================== */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bs-body-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--bs-primary);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--bs-primary-border-subtle);
+}
+
+/* ==================== Responsive ==================== */
+@media (max-width: 768px) {
+  kbd {
+    font-size: 1.75rem !important;
+    padding: 0.75rem 1.25rem !important;
+  }
+
+  .git-command {
+    font-size: 0.9rem;
+    padding: 0.5rem 0.75rem;
+  }
+
+  .workflow-list li {
+    padding-left: 3rem;
+  }
+
+  .workflow-list li::before {
+    width: 2rem;
+    height: 2rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 576px) {
+  kbd {
+    font-size: 1.5rem !important;
+    padding: 0.6rem 1rem !important;
+  }
+}
+
+/* ==================== Print ==================== */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  .card {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}
+
+/* ==================== Accessibility ==================== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

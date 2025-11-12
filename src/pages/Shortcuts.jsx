@@ -8,12 +8,12 @@ import { Star, CheckCircle, BarChart3, Monitor, Apple } from 'lucide-react'
 
 const Shortcuts = () => {
   const { t } = useTranslation()
-  const { os, setOs, favorites, learned } = useAppContext()
+  const { os, setOs, favorites, learnt } = useAppContext()
   const [searchTerm, setSearchTerm] = useState('')
   const [selectedCategory, setSelectedCategory] = useState('all')
 
   const totalShortcuts = getAllShortcuts().length
-  const progressPercentage = Math.round((learned.length / totalShortcuts) * 100)
+  const progressPercentage = Math.round((learnt.length / totalShortcuts) * 100)
 
   // Filter shortcuts
   const filterShortcuts = () => {
@@ -22,8 +22,8 @@ const Shortcuts = () => {
     // Filter by category
     if (selectedCategory === 'favorites') {
       filtered = filtered.filter(s => favorites.includes(s.id))
-    } else if (selectedCategory === 'learned') {
-      filtered = filtered.filter(s => learned.includes(s.id))
+    } else if (selectedCategory === 'learnt') {
+      filtered = filtered.filter(s => learnt.includes(s.id))
     } else if (selectedCategory !== 'all') {
       filtered = filtered.filter(s => s.category === selectedCategory)
     }
@@ -59,8 +59,8 @@ const Shortcuts = () => {
         <div className="col-md-4">
           <StatCard
             icon={<CheckCircle size={24} />}
-            title={t('stats.learned')}
-            value={`${learned.length}/${totalShortcuts}`}
+            title={t('stats.learnt')}
+            value={`${learnt.length}/${totalShortcuts}`}
             variant="success"
           />
         </div>
@@ -115,7 +115,7 @@ const Shortcuts = () => {
               className={`btn btn-sm ${selectedCategory === cat ? 'btn-primary' : 'btn-outline-primary'}`}
               onClick={() => setSelectedCategory(cat)}
             >
-              {t(`filters.${cat}`)} ({getCategoryCount(cat, favorites, learned)})
+              {t(`filters.${cat}`)} ({getCategoryCount(cat, favorites, learnt)})
             </button>
           ))}
         </div>
