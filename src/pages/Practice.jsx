@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useAppContext } from '../context/AppContext'
-import { getAllShortcuts } from '../data/shortcutsData'
+import { getPracticeShortcuts } from '../data/shortcutsData'
 import { useKeyboardCapture } from '../hooks/useKeyboardCapture'
 import PracticeStart from '../components/practice/PracticeStart'
 import PracticeActive from '../components/practice/PracticeActive'
@@ -35,13 +35,13 @@ const Practice = () => {
   }, [practiceOS])
 
   const generateQuestion = () => {
-    const allShortcuts = getAllShortcuts()
+    const practiceShortcuts = getPracticeShortcuts()
     let randomShortcut
 
     // Don't repeat the last question
     do {
-      randomShortcut = allShortcuts[Math.floor(Math.random() * allShortcuts.length)]
-    } while (lastQuestion && randomShortcut.id === lastQuestion.id && allShortcuts.length > 1)
+      randomShortcut = practiceShortcuts[Math.floor(Math.random() * practiceShortcuts.length)]
+    } while (lastQuestion && randomShortcut.id === lastQuestion.id && practiceShortcuts.length > 1)
 
     setLastQuestion(randomShortcut)
     setCurrentQuestion(randomShortcut)
@@ -69,12 +69,11 @@ const Practice = () => {
     })
 
     updatePracticeStats(isCorrect)
+  }
 
-    // Generate new question after a delay
-    setTimeout(() => {
-      generateQuestion()
-      clearKeyboardInput()
-    }, 2000)
+  const handleContinue = () => {
+    generateQuestion()
+    clearKeyboardInput()
   }
 
   const skipQuestion = () => {
@@ -117,6 +116,7 @@ const Practice = () => {
           onCheckAnswer={checkAnswer}
           onClear={clearKeyboardInput}
           onSkip={skipQuestion}
+          onContinue={handleContinue}
           onExit={exitPractice}
         />
       )}

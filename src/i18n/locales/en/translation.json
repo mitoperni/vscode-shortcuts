@@ -397,6 +397,7 @@
     "verify": "Verify",
     "clear": "Clear",
     "skip": "Skip",
+    "continue": "Continue",
     "exit": "Exit",
     "correct": "Correct!",
     "incorrect": "Incorrect. The correct answer is:",

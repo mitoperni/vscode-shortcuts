@@ -178,6 +178,29 @@ export const getTopShortcuts = (limit = 20) => {
 }
 
 /**
+ * Check if a shortcut contains special characters that require Option/Alt on Spanish keyboards
+ * or ambiguous notation like "↑/↓" that represents multiple shortcuts
+ * These characters cause issues in practice mode
+ */
+const hasProblematicCharacters = (shortcut) => {
+  const problematicChars = ['[', ']', '{', '}', '\\', '`', '~', '´', '¨', '/']
+  return problematicChars.some(char =>
+    shortcut.windows.includes(char) || shortcut.mac.includes(char)
+  )
+}
+
+/**
+ * Get shortcuts safe for practice mode (no special chars, high relevance)
+ * Filters out shortcuts with characters that require Option/Alt on Spanish keyboards
+ * Only includes shortcuts with relevance >= 7
+ */
+export const getPracticeShortcuts = () => {
+  return getAllShortcuts()
+    .filter(s => s.relevance >= 7) // Only high-relevance shortcuts
+    .filter(s => !hasProblematicCharacters(s)) // Exclude problematic shortcuts
+}
+
+/**
  * Get count of shortcuts in a category
  */
 export const getCategoryCount = (category, favorites = []) => {

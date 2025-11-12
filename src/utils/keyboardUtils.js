@@ -6,9 +6,23 @@
  * Normalize key names for consistent comparison across different browsers/OS
  * @param {string} key - The raw key from keyboard event
  * @param {string} os - The operating system ('windows' or 'mac')
+ * @param {string} code - The physical key code from keyboard event
  * @returns {string} Normalized key name
  */
-export const normalizeKey = (key, os) => {
+export const normalizeKey = (key, os, code) => {
+  // Handle Dead keys using the physical key code
+  if (key === 'Dead' && code) {
+    const deadKeyMap = {
+      'Backquote': '`',
+      'Quote': '´',
+      'BracketLeft': '¨',
+      'KeyN': '~'
+    }
+    if (deadKeyMap[code]) {
+      return deadKeyMap[code]
+    }
+  }
+
   const keyMap = {
     'Control': 'Ctrl',
     'Meta': os === 'mac' ? '⌘' : 'Ctrl',

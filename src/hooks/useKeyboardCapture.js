@@ -26,7 +26,7 @@ export const useKeyboardCapture = (isActive, os) => {
       if (shouldIgnoreEvent(e)) return
       e.preventDefault()
 
-      const key = normalizeKey(e.key, os)
+      const key = normalizeKey(e.key, os, e.code)
       const modifiers = getModifierKeys(e, os)
       const newKeys = [...modifiers]
 

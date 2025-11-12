@@ -21,6 +21,7 @@ const PracticeActive = ({
   onCheckAnswer,
   onClear,
   onSkip,
+  onContinue,
   onExit
 }) => {
   const { t } = useTranslation()
@@ -70,30 +71,41 @@ const PracticeActive = ({
               <PracticeFeedback feedback={feedback} />
 
               <div className="d-flex gap-2 justify-content-center mb-3 flex-wrap">
-                <button
-                  className="btn btn-success btn-lg d-flex align-items-center gap-2"
-                  onClick={onCheckAnswer}
-                  disabled={!currentAnswer.trim() || feedback !== null}
-                >
-                  <CheckCircle2 size={20} />
-                  {t("practice.verify") || "Verificar"}
-                </button>
-                <button
-                  className="btn btn-outline-secondary btn-lg d-flex align-items-center gap-2"
-                  onClick={onClear}
-                  disabled={!currentAnswer.trim() || feedback !== null}
-                >
-                  <Eraser size={20} />
-                  {t("practice.clear") || "Limpiar"}
-                </button>
-                <button
-                  className="btn btn-secondary btn-lg d-flex align-items-center gap-2"
-                  onClick={onSkip}
-                  disabled={feedback !== null}
-                >
-                  <SkipForward size={20} />
-                  {t("practice.skip") || "Saltar"}
-                </button>
+                {feedback ? (
+                  <button
+                    className="btn btn-primary btn-lg d-flex align-items-center gap-2"
+                    onClick={onContinue}
+                  >
+                    <SkipForward size={20} />
+                    {t("practice.continue") || "Continuar"}
+                  </button>
+                ) : (
+                  <>
+                    <button
+                      className="btn btn-success btn-lg d-flex align-items-center gap-2"
+                      onClick={onCheckAnswer}
+                      disabled={!currentAnswer.trim()}
+                    >
+                      <CheckCircle2 size={20} />
+                      {t("practice.verify") || "Verificar"}
+                    </button>
+                    <button
+                      className="btn btn-outline-secondary btn-lg d-flex align-items-center gap-2"
+                      onClick={onClear}
+                      disabled={!currentAnswer.trim()}
+                    >
+                      <Eraser size={20} />
+                      {t("practice.clear") || "Limpiar"}
+                    </button>
+                    <button
+                      className="btn btn-secondary btn-lg d-flex align-items-center gap-2"
+                      onClick={onSkip}
+                    >
+                      <SkipForward size={20} />
+                      {t("practice.skip") || "Saltar"}
+                    </button>
+                  </>
+                )}
                 <button
                   className="btn btn-danger btn-lg d-flex align-items-center gap-2"
                   onClick={onExit}
