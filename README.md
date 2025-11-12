@@ -10,7 +10,7 @@ Interactive web application to learn VS Code keyboard shortcuts and Git commands
 ## 🌟 Features
 
 ### Core Functionality
-- **88 VS Code Shortcuts** - Organized in 10 categories
+- **122 VS Code Shortcuts** - Organized in 10 categories
 - **51 Git Commands** - Essential commands for version control
 - **Real-time Search** - Find shortcuts instantly
 - **Category Filters** - Browse by functionality
@@ -98,7 +98,7 @@ The production files will be in the `dist/` directory.
 ### For Students
 
 #### 1️⃣ **Learn Shortcuts**
-- Browse through all 88 VS Code shortcuts
+- Browse through all 122 VS Code shortcuts
 - Switch between Windows and Mac mode
 - Search for specific shortcuts
 - Filter by category (Essentials, Editing, Navigation, etc.)
@@ -288,21 +288,46 @@ This is an educational project for bootcamp students. Contributions are welcome!
 
 ### How to Contribute
 
+We've made it easy to contribute! There are several ways to help improve this project:
+
+#### 🐛 Report a Bug
+
+Found a bug? Help us fix it!
+
+1. Go to the [Bug Report template](https://github.com/mitoperni/vscode-shortcuts/issues/new?labels=bug&template=bug_report.md)
+2. Fill in the details about the bug
+3. Submit the issue
+
+#### 💡 Suggest an Improvement
+
+Have an idea for a new feature or enhancement?
+
+1. Go to the [Feature Request template](https://github.com/mitoperni/vscode-shortcuts/issues/new?labels=enhancement&template=feature_request.md)
+2. Describe your idea
+3. Submit the issue
+
+#### 🔧 Submit Code Changes
+
+Want to contribute code directly?
+
 1. Fork the repository
 2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+3. Make your changes
+4. Commit your changes (`git commit -m 'Add amazing feature'`)
+5. Push to the branch (`git push origin feature/amazing-feature`)
+6. Open a Pull Request
 
 ### Ideas for Contributions
 
-- Add more shortcuts
-- Add more Git commands
-- Improve translations
-- Add more languages (French, German, Portuguese, etc.)
-- Improve UI/UX
-- Add keyboard shortcut testing
-- Add export functionality (PDF, print)
+- 📝 Add more shortcuts
+- 🔧 Add more Git commands
+- 🌐 Improve translations
+- 🗣️ Add more languages (French, German, Portuguese, etc.)
+- 🎨 Improve UI/UX
+- ⌨️ Add keyboard shortcut testing
+- 📄 Add export functionality (PDF, print)
+- 🎮 Enhance practice mode
+- 📊 Add more statistics and analytics
 
 ## 📝 License
 
@@ -316,7 +341,8 @@ This project is proprietary and confidential. Unauthorized copying, distribution
 
 **Miguel Toyas Pernichi**
 - Full Stack Development Bootcamp Instructor
-- GitHub: [@MiguelToyasP](https://github.com/MiguelToyasP)
+- GitHub: [@mitoperni](https://github.com/mitoperni)
+- LinkedIn: [Miguel Toyas Pernichi](https://www.linkedin.com/in/migueltoyaspernichi/)
 
 ## 🙏 Acknowledgments
 
@@ -332,8 +358,9 @@ If you have questions or need help:
 
 1. Check this README first
 2. Look at the code comments
-3. Open an issue on GitHub
-4. Contact the instructor
+3. [Report a bug](https://github.com/mitoperni/vscode-shortcuts/issues/new?labels=bug&template=bug_report.md) or [suggest an improvement](https://github.com/mitoperni/vscode-shortcuts/issues/new?labels=enhancement&template=feature_request.md)
+4. Browse existing [GitHub Issues](https://github.com/mitoperni/vscode-shortcuts/issues)
+5. Contact the author via [GitHub](https://github.com/mitoperni) or [LinkedIn](https://www.linkedin.com/in/migueltoyaspernichi/)
 
 ## 🎓 Educational Value
 
@@ -396,7 +423,7 @@ Potential features for future versions:
 
 ### v1.0.0 (2025-01-11)
 - Initial release
-- 88 VS Code shortcuts
+- 122 VS Code shortcuts
 - 51 Git commands
 - Bilingual support (EN/ES)
 - Practice mode
