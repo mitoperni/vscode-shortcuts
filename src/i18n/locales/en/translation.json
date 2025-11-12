@@ -516,7 +516,11 @@
     }
   },
   "footer": {
-    "madeWith": "Made with ❤️ for Full Stack Bootcamp 2025",
-    "tip": "💡 Tip: Save your favorite shortcuts for quick access"
+    "project": "Project",
+    "contribute": "Help improve this project",
+    "links": "Links",
+    "reportBug": "Report a bug",
+    "suggest": "Suggest an improvement",
+    "author": "Author"
   }
 }

@@ -516,7 +516,11 @@
     }
   },
   "footer": {
-    "madeWith": "Hecho con ❤️ para Bootcamp Full Stack 2025",
-    "tip": "💡 Consejo: Guarda tus atajos favoritos para acceder rápidamente"
+    "project": "Proyecto",
+    "contribute": "Ayuda a mejorar este proyecto",
+    "links": "Enlaces",
+    "reportBug": "Reportar un bug",
+    "suggest": "Sugerir una mejora",
+    "author": "Autor"
   }
 }
