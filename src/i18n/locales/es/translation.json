@@ -404,7 +404,9 @@
     "statistics": "Estadísticas",
     "correctAnswers": "Correctas",
     "accuracy": "Precisión",
-    "selectOSFirst": "Por favor selecciona tu sistema operativo primero"
+    "selectOSFirst": "Por favor selecciona tu sistema operativo primero",
+    "betaNotice": "Este apartado está en fase beta. Por favor reporta cualquier error a Miguel Toyas Pernichi mediante Slack o en GitHub bajo el usuario",
+    "betaUsername": "mitoperni"
   },
   "git": {
     "title": "🔧 Comandos Git/GitHub",

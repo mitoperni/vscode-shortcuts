@@ -404,7 +404,9 @@
     "statistics": "Statistics",
     "correctAnswers": "Correct",
     "accuracy": "Accuracy",
-    "selectOSFirst": "Please select your operating system first"
+    "selectOSFirst": "Please select your operating system first",
+    "betaNotice": "This section is in beta. Please report any issues to Miguel Toyas Pernichi via Slack or on GitHub under the username",
+    "betaUsername": "mitoperni"
   },
   "git": {
     "title": "🔧 Git/GitHub Commands",

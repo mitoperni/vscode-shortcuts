@@ -5,7 +5,8 @@ import {
   Keyboard,
   CheckCircle2,
   BarChart3,
-  Play
+  Play,
+  AlertCircle
 } from 'lucide-react'
 import PracticeStats from './PracticeStats'
 
@@ -19,6 +20,25 @@ const PracticeStart = ({ practiceOS, setPracticeOS, onStart, practiceStats }) =>
         {t('practice.title')}
       </h2>
       <p className="lead mb-4">{t('practice.subtitle')}</p>
+
+      {/* Beta Notice */}
+      <div className="alert alert-warning d-flex align-items-start gap-3 mx-auto mb-4" style={{ maxWidth: '700px' }}>
+        <AlertCircle size={24} className="flex-shrink-0 mt-1" />
+        <div className="text-start">
+          <strong>Beta</strong>
+          <p className="mb-0">
+            {t('practice.betaNotice')}{' '}
+            <a
+              href="https://github.com/mitoperni"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="alert-link fw-bold"
+            >
+              {t('practice.betaUsername')}
+            </a>
+          </p>
+        </div>
+      </div>
 
       <div className="card mb-4 mx-auto" style={{ maxWidth: '600px' }}>
         <div className="card-body">
