@@ -12,7 +12,6 @@ export const useAppContext = () => {
 
 export const AppProvider = ({ children }) => {
   // UI States
-  const [theme, setTheme] = useState('dark')
   const [os, setOs] = useState('windows')
 
   // User Data States (saved to LocalStorage)
@@ -21,24 +20,21 @@ export const AppProvider = ({ children }) => {
   // Practice Mode States
   const [practiceStats, setPracticeStats] = useState({ correct: 0, total: 0 })
 
+  // Force dark theme always
+  useEffect(() => {
+    document.documentElement.setAttribute('data-bs-theme', 'dark')
+  }, [])
+
   // Load from LocalStorage on mount
   useEffect(() => {
-    const savedTheme = localStorage.getItem('theme') || 'dark'
     const savedOS = localStorage.getItem('os') || 'windows'
     const savedFavorites = JSON.parse(localStorage.getItem('favorites') || '[]')
     const savedPracticeStats = JSON.parse(localStorage.getItem('practiceStats') || '{"correct":0,"total":0}')
 
-    setTheme(savedTheme)
     setOs(savedOS)
     setFavorites(savedFavorites)
     setPracticeStats(savedPracticeStats)
   }, [])
-
-  // Save to LocalStorage on change
-  useEffect(() => {
-    localStorage.setItem('theme', theme)
-    document.documentElement.setAttribute('data-bs-theme', theme)
-  }, [theme])
 
   useEffect(() => {
     localStorage.setItem('os', os)
@@ -70,12 +66,10 @@ export const AppProvider = ({ children }) => {
 
   const value = {
     // States
-    theme,
     os,
     favorites,
     practiceStats,
     // Setters
-    setTheme,
     setOs,
     setFavorites,
     setPracticeStats,

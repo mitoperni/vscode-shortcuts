@@ -4,10 +4,17 @@
     "search": "Buscar atajo o comando...",
     "windows": "Windows",
     "mac": "Mac",
-    "darkMode": "Modo Oscuro",
-    "lightMode": "Modo Claro",
     "results": "resultados",
-    "noResults": "No se encontraron resultados"
+    "noResults": "No se encontraron resultados",
+    "clearFilters": "Limpiar filtros",
+    "activeFilters": "Filtros activos",
+    "of": "de",
+    "filters": "Filtros"
+  },
+  "sort": {
+    "category": "Por categoría",
+    "name": "Por nombre",
+    "relevance": "Por relevancia"
   },
   "navigation": {
     "home": "Inicio",
@@ -199,7 +206,30 @@
     "paste": "Pegar",
     "scrollUp": "Desplazar Arriba/Abajo",
     "scrollPage": "Desplazar Página",
-    "goToTopBottom": "Ir al Inicio/Fin"
+    "goToTopBottom": "Ir al Inicio/Fin",
+    "settings": "Abrir Configuración",
+    "keyboardShortcuts": "Atajos de Teclado",
+    "outdent": "Reducir Sangría",
+    "goToLineEnd": "Ir al Final de Línea",
+    "goBack": "Volver",
+    "goForward": "Avanzar",
+    "navigateEditorGroup": "Navegar Grupos de Editores",
+    "openRecent": "Abrir Recientes",
+    "toggleCaseSensitive": "Alternar Sensible a Mayúsculas",
+    "toggleRegex": "Alternar Expresiones Regulares",
+    "toggleWholeWord": "Alternar Palabra Completa",
+    "columnSelection": "Selección por Columnas",
+    "goToImplementation": "Ir a Implementación",
+    "closeOthers": "Cerrar Otros Editores",
+    "resetZoom": "Restablecer Zoom",
+    "togglePanel": "Alternar Panel",
+    "moveSidebarRight": "Mover Posición de Barra Lateral",
+    "restart": "Reiniciar Depuración",
+    "showDebugConsole": "Mostrar Consola de Depuración",
+    "clearTerminal": "Limpiar Terminal",
+    "killTerminal": "Cerrar Terminal",
+    "scrollDown": "Desplazar Abajo",
+    "focusTerminal": "Enfocar Terminal"
   },
   "descriptions": {
     "commandPalette": "Acceso a todos los comandos de VS Code",
@@ -325,7 +355,30 @@
     "paste": "Pegar en terminal activa",
     "scrollUp": "Hacer scroll en terminal",
     "scrollPage": "Scroll de página en terminal",
-    "goToTopBottom": "Ir al inicio/fin de terminal"
+    "goToTopBottom": "Ir al inicio/fin de terminal",
+    "settings": "Abrir configuración de usuario y espacio de trabajo",
+    "keyboardShortcuts": "Ver y editar atajos de teclado",
+    "outdent": "Reducir sangría de línea",
+    "goToLineEnd": "Mover cursor al final de línea",
+    "goBack": "Navegar hacia atrás en el historial del editor",
+    "goForward": "Navegar hacia adelante en el historial del editor",
+    "navigateEditorGroup": "Cambiar foco entre editores divididos",
+    "openRecent": "Acceso rápido a archivos y espacios de trabajo recientes",
+    "toggleCaseSensitive": "Activar/desactivar búsqueda sensible a mayúsculas",
+    "toggleRegex": "Activar/desactivar búsqueda con expresiones regulares",
+    "toggleWholeWord": "Activar/desactivar coincidencia de palabra completa",
+    "columnSelection": "Seleccionar columnas verticalmente (selección de caja)",
+    "goToImplementation": "Saltar a la implementación de interfaz o método abstracto",
+    "closeOthers": "Cerrar todas las demás pestañas del editor",
+    "resetZoom": "Restablecer el zoom del editor al nivel predeterminado",
+    "togglePanel": "Mostrar/ocultar panel inferior (terminal, problemas, salida)",
+    "moveSidebarRight": "Mover barra lateral al lado izquierdo o derecho",
+    "restart": "Reiniciar sesión de depuración actual",
+    "showDebugConsole": "Abrir panel de consola de depuración",
+    "clearTerminal": "Limpiar salida de terminal",
+    "killTerminal": "Cerrar y eliminar terminal activa",
+    "scrollDown": "Desplazar hacia abajo en terminal",
+    "focusTerminal": "Dar foco al panel de terminal"
   },
   "practice": {
     "title": "🎮 Modo Práctica",
@@ -439,8 +492,8 @@
     },
     "features": {
       "shortcuts": {
-        "title": "88 Atajos de VS Code",
-        "description": "Colección completa de atajos de teclado para Windows y Mac"
+        "title": "120+ Atajos de VS Code",
+        "description": "Colección completa de atajos de teclado para Windows y Mac, ordenados por relevancia"
       },
       "git": {
         "title": "51 Comandos Git",

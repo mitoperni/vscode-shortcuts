@@ -13,7 +13,7 @@ kbd {
   display: block;
   text-align: center;
   font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', 'Consolas', 'Courier New', monospace;
-  font-size: 2rem !important;
+  font-size: 1.5rem !important;
   font-weight: 700;
   padding: 0.5rem 2rem !important;
   letter-spacing: 2px;
@@ -39,10 +39,6 @@ kbd {
   line-height: 1.6;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   word-break: break-word;
-}
-
-[data-bs-theme="light"] .git-command {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 
 /* ==================== Learnt Shortcuts ==================== */

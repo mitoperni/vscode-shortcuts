@@ -1,104 +1,110 @@
-import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useAppContext } from '../context/AppContext'
 import ShortcutCard from '../components/shortcuts/ShortcutCard'
-import StatCard from '../components/common/StatCard'
-import { getAllShortcuts, categories, getCategoryCount } from '../data/shortcutsData'
-import { Star } from 'lucide-react'
+import SearchBar from '../components/shortcuts/filters/SearchBar'
+import FilterControls from '../components/shortcuts/filters/FilterControls'
+import CategoryFilters from '../components/shortcuts/filters/CategoryFilters'
+import ActiveFilters from '../components/shortcuts/filters/ActiveFilters'
+import { useShortcutsFilter } from '../hooks/useShortcutsFilter'
+import { getAllShortcuts, categories } from '../data/shortcutsData'
 
 const Shortcuts = () => {
   const { t } = useTranslation()
   const { os, setOs, favorites } = useAppContext()
-  const [searchTerm, setSearchTerm] = useState('')
-  const [selectedCategory, setSelectedCategory] = useState('all')
 
-  // Filter shortcuts
-  const filterShortcuts = () => {
-    let filtered = getAllShortcuts()
-
-    // Filter by category
-    if (selectedCategory === 'favorites') {
-      filtered = filtered.filter(s => favorites.includes(s.id))
-    } else if (selectedCategory !== 'all') {
-      filtered = filtered.filter(s => s.category === selectedCategory)
-    }
-
-    // Filter by search term
-    if (searchTerm) {
-      const search = searchTerm.toLowerCase()
-      filtered = filtered.filter(s =>
-        t(`shortcuts.${s.action}`).toLowerCase().includes(search) ||
-        t(`descriptions.${s.action}`).toLowerCase().includes(search) ||
-        s.windows.toLowerCase().includes(search) ||
-        s.mac.toLowerCase().includes(search)
-      )
-    }
-
-    return filtered
-  }
-
-  const filteredShortcuts = filterShortcuts()
+  const {
+    searchTerm,
+    setSearchTerm,
+    selectedCategory,
+    setSelectedCategory,
+    sortBy,
+    setSortBy,
+    showFilters,
+    setShowFilters,
+    filteredShortcuts,
+    clearAllFilters,
+    hasActiveFilters
+  } = useShortcutsFilter(favorites)
 
   return (
     <div className="container my-4">
-      {/* OS Toggle */}
-      <div className="mb-4 text-center">
-        <div className="btn-group btn-group-lg" role="group">
-          <button
-            className={`btn ${
-              os === "windows" ? "btn-primary" : "btn-outline-primary"
-            } d-flex align-items-center gap-2`}
-            onClick={() => setOs("windows")}
-          >
-            <i class="bi bi-windows"></i>
-            {t("common.windows")}
-          </button>
-          <button
-            className={`btn ${
-              os === "mac" ? "btn-primary" : "btn-outline-primary"
-            } d-flex align-items-center gap-2`}
-            onClick={() => setOs("mac")}
-          >
-            <i class="bi bi-apple"></i>
-            {t("common.mac")}
-          </button>
-        </div>
-      </div>
-
-      {/* Search Bar */}
-      <div className="mb-4">
-        <input
-          type="text"
-          className="form-control form-control-lg"
-          placeholder={t("common.search")}
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-        />
-      </div>
-
-      {/* Category Filters */}
-      <div className="mb-4">
-        <div className="d-flex flex-wrap gap-2">
-          {categories.map((cat) => (
+      {/* Search and Filter Bar - Sticky */}
+      <div className="pt-3 pb-3 mb-4" style={{ zIndex: 1020 }}>
+        {/* OS Toggle & Search Bar */}
+        <div className="mb-3 d-flex flex-column flex-lg-row align-items-center justify-content-between gap-3">
+          {/* OS Toggle */}
+          <div className="btn-group btn-group-lg" role="group">
             <button
-              key={cat}
-              className={`btn btn-sm ${
-                selectedCategory === cat ? "btn-primary" : "btn-outline-primary"
-              }`}
-              onClick={() => setSelectedCategory(cat)}
+              className={`btn ${
+                os === "windows" ? "btn-secondary" : "btn-outline-secondary"
+              } d-flex align-items-center gap-2`}
+              onClick={() => setOs("windows")}
             >
-              {t(`filters.${cat}`)} ({getCategoryCount(cat, favorites)})
+              <i className="bi bi-windows"></i>
+              {t("common.windows")}
             </button>
-          ))}
-        </div>
-      </div>
+            <button
+              className={`btn ${
+                os === "mac" ? "btn-secondary" : "btn-outline-secondary"
+              } d-flex align-items-center gap-2`}
+              onClick={() => setOs("mac")}
+            >
+              <i className="bi bi-apple"></i>
+              {t("common.mac")}
+            </button>
+          </div>
 
-      {/* Results Count */}
-      {(searchTerm || selectedCategory !== "all") && (
-        <div className="alert alert-info mb-4">
-          {filteredShortcuts.length} {t("common.results")}
+          {/* Search Bar */}
+          <div className="flex-grow-1 w-100">
+            <SearchBar
+              searchTerm={searchTerm}
+              onSearchChange={setSearchTerm}
+              onClear={() => setSearchTerm("")}
+            />
+          </div>
         </div>
-      )}
+
+        {/* Filter Controls */}
+        <FilterControls
+          sortBy={sortBy}
+          onSortChange={setSortBy}
+          showFilters={showFilters}
+          onToggleFilters={() => setShowFilters(!showFilters)}
+          hasActiveFilters={hasActiveFilters}
+          onClearFilters={clearAllFilters}
+        />
+
+        {/* Category Filters - Collapsible */}
+        {showFilters && (
+          <CategoryFilters
+            categories={categories}
+            selectedCategory={selectedCategory}
+            onSelectCategory={setSelectedCategory}
+          />
+        )}
+
+        {/* Active Filters Badges */}
+        <ActiveFilters
+          searchTerm={searchTerm}
+          selectedCategory={selectedCategory}
+          onClearSearch={() => setSearchTerm("")}
+          onClearCategory={() => setSelectedCategory("all")}
+        />
+
+        {/* Results Count - Only show when filtering */}
+        {hasActiveFilters && (
+          <div className="alert alert-light border mb-0 d-flex justify-content-between align-items-center py-2">
+            <span>
+              <strong>{filteredShortcuts.length}</strong> {t("common.results")}
+              {filteredShortcuts.length !== getAllShortcuts().length && (
+                <span className="text-muted ms-2">
+                  ({t("common.of")} {getAllShortcuts().length})
+                </span>
+              )}
+            </span>
+          </div>
+        )}
+      </div>
 
       {/* Shortcuts Grid */}
       <div className="row g-3">

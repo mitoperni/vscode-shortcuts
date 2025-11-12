@@ -4,10 +4,17 @@
     "search": "Search shortcuts or commands...",
     "windows": "Windows",
     "mac": "Mac",
-    "darkMode": "Dark Mode",
-    "lightMode": "Light Mode",
     "results": "results",
-    "noResults": "No results found"
+    "noResults": "No results found",
+    "clearFilters": "Clear filters",
+    "activeFilters": "Active filters",
+    "of": "of",
+    "filters": "Filters"
+  },
+  "sort": {
+    "category": "By category",
+    "name": "By name",
+    "relevance": "By relevance"
   },
   "navigation": {
     "home": "Home",
@@ -199,7 +206,30 @@
     "paste": "Paste",
     "scrollUp": "Scroll Up/Down",
     "scrollPage": "Scroll Page",
-    "goToTopBottom": "Go to Top/Bottom"
+    "goToTopBottom": "Go to Top/Bottom",
+    "settings": "Open Settings",
+    "keyboardShortcuts": "Keyboard Shortcuts",
+    "outdent": "Outdent",
+    "goToLineEnd": "Go to Line End",
+    "goBack": "Go Back",
+    "goForward": "Go Forward",
+    "navigateEditorGroup": "Navigate Editor Groups",
+    "openRecent": "Open Recent",
+    "toggleCaseSensitive": "Toggle Case Sensitive",
+    "toggleRegex": "Toggle Regex",
+    "toggleWholeWord": "Toggle Whole Word",
+    "columnSelection": "Column Selection",
+    "goToImplementation": "Go to Implementation",
+    "closeOthers": "Close Other Editors",
+    "resetZoom": "Reset Zoom",
+    "togglePanel": "Toggle Panel",
+    "moveSidebarRight": "Move Sidebar Position",
+    "restart": "Restart Debugging",
+    "showDebugConsole": "Show Debug Console",
+    "clearTerminal": "Clear Terminal",
+    "killTerminal": "Kill Terminal",
+    "scrollDown": "Scroll Down",
+    "focusTerminal": "Focus Terminal"
   },
   "descriptions": {
     "commandPalette": "Access to all VS Code commands",
@@ -325,7 +355,30 @@
     "paste": "Paste in active terminal",
     "scrollUp": "Scroll in terminal",
     "scrollPage": "Page scroll in terminal",
-    "goToTopBottom": "Go to start/end of terminal"
+    "goToTopBottom": "Go to start/end of terminal",
+    "settings": "Open user and workspace settings",
+    "keyboardShortcuts": "View and edit keyboard shortcuts",
+    "outdent": "Decrease line indentation",
+    "goToLineEnd": "Move cursor to end of line",
+    "goBack": "Navigate backwards in editor history",
+    "goForward": "Navigate forwards in editor history",
+    "navigateEditorGroup": "Switch focus between split editors",
+    "openRecent": "Quick access to recently opened files and workspaces",
+    "toggleCaseSensitive": "Enable/disable case-sensitive search",
+    "toggleRegex": "Enable/disable regular expression search",
+    "toggleWholeWord": "Enable/disable whole word matching",
+    "columnSelection": "Select columns vertically (box selection)",
+    "goToImplementation": "Jump to implementation of interface or abstract method",
+    "closeOthers": "Close all other editor tabs",
+    "resetZoom": "Reset editor zoom to default level",
+    "togglePanel": "Show/hide bottom panel (terminal, problems, output)",
+    "moveSidebarRight": "Move sidebar to left or right side",
+    "restart": "Restart current debugging session",
+    "showDebugConsole": "Open debug console panel",
+    "clearTerminal": "Clear terminal output",
+    "killTerminal": "Close and kill active terminal",
+    "scrollDown": "Scroll down in terminal",
+    "focusTerminal": "Give focus to terminal panel"
   },
   "practice": {
     "title": "🎮 Practice Mode",
@@ -439,8 +492,8 @@
     },
     "features": {
       "shortcuts": {
-        "title": "88 VS Code Shortcuts",
-        "description": "Complete collection of keyboard shortcuts for Windows and Mac"
+        "title": "120+ VS Code Shortcuts",
+        "description": "Complete collection of keyboard shortcuts for Windows and Mac, ranked by relevance"
       },
       "git": {
         "title": "51 Git Commands",

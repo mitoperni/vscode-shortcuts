@@ -1,19 +1,13 @@
 import { useTranslation } from 'react-i18next'
 import { Link, useLocation } from 'react-router-dom'
-import { useAppContext } from '../../context/AppContext'
-import { Keyboard, GitBranch, Gamepad2, Sun, Moon } from 'lucide-react'
+import { Keyboard, GitBranch, Gamepad2 } from 'lucide-react'
 
 const Header = () => {
   const { t, i18n } = useTranslation()
-  const { theme, setTheme } = useAppContext()
   const location = useLocation()
 
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng)
-  }
-
-  const toggleTheme = () => {
-    setTheme(theme === 'dark' ? 'light' : 'dark')
   }
 
   const navItems = [
@@ -99,25 +93,6 @@ const Header = () => {
                   ES
                 </button>
               </div>
-
-              {/* Theme Toggle */}
-              <button
-                className="btn btn-outline-secondary btn-sm d-flex align-items-center justify-content-center"
-                onClick={toggleTheme}
-                title={
-                  theme === "dark"
-                    ? t("common.lightMode")
-                    : t("common.darkMode")
-                }
-                aria-label={
-                  theme === "dark"
-                    ? "Switch to light mode"
-                    : "Switch to dark mode"
-                }
-                style={{ width: "38px", height: "38px", padding: "0" }}
-              >
-                {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
-              </button>
             </div>
           </div>
         </div>
