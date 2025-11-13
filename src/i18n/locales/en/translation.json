@@ -83,6 +83,7 @@
     }
   },
   "shortcuts": {
+    "topShortcuts": "Top 12 Most Used Shortcuts",
     "commandPalette": "Command Palette",
     "quickOpen": "Quick Open File",
     "save": "Save",
@@ -90,6 +91,7 @@
     "find": "Find in File",
     "replace": "Replace",
     "commentLine": "Comment Line",
+    "commentBlock": "Comment Block",
     "undo": "Undo",
     "redo": "Redo",
     "terminal": "Integrated Terminal",
@@ -239,6 +241,7 @@
     "find": "Find text in current file",
     "replace": "Find and replace text",
     "commentLine": "Comment/uncomment line or selection",
+    "commentBlock": "Comment out selected lines as a block",
     "undo": "Undo last action",
     "redo": "Redo undone action",
     "terminal": "Show/hide integrated terminal",

@@ -5,6 +5,7 @@ import SearchBar from '../components/shortcuts/filters/SearchBar'
 import FilterControls from '../components/shortcuts/filters/FilterControls'
 import CategoryFilters from '../components/shortcuts/filters/CategoryFilters'
 import ActiveFilters from '../components/shortcuts/filters/ActiveFilters'
+import TopShortcutsBanner from '../components/shortcuts/TopShortcutsBanner'
 import { useShortcutsFilter } from '../hooks/useShortcutsFilter'
 import { getAllShortcuts, categories } from '../data/shortcutsData'
 
@@ -28,6 +29,9 @@ const Shortcuts = () => {
 
   return (
     <div className="container my-4">
+      {/* Top 10 Most Used Shortcuts Banner */}
+      {!hasActiveFilters && <TopShortcutsBanner />}
+
       {/* Search and Filter Bar - Sticky */}
       <div className="pt-3 pb-3 mb-4" style={{ zIndex: 1020 }}>
         {/* OS Toggle & Search Bar */}

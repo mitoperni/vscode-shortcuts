@@ -23,6 +23,14 @@ kbd {
   color: inherit;
 }
 
+/* Better arrow rendering - Replace Unicode with cleaner symbols */
+kbd {
+  /* Improve rendering of arrows and special characters */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
 /* ==================== Learnt Shortcuts ==================== */
 .learnt-shortcut {
   opacity: 0.6;

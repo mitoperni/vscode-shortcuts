@@ -83,6 +83,7 @@
     }
   },
   "shortcuts": {
+    "topShortcuts": "Top 12 Atajos Más Usados",
     "commandPalette": "Paleta de Comandos",
     "quickOpen": "Abrir Archivo Rápido",
     "save": "Guardar",
@@ -90,6 +91,7 @@
     "find": "Buscar en Archivo",
     "replace": "Reemplazar",
     "commentLine": "Comentar Línea",
+    "commentBlock": "Comentar Bloque",
     "undo": "Deshacer",
     "redo": "Rehacer",
     "terminal": "Terminal Integrada",
@@ -239,6 +241,7 @@
     "find": "Buscar texto en el archivo actual",
     "replace": "Buscar y reemplazar texto",
     "commentLine": "Comentar/descomentar línea o selección",
+    "commentBlock": "Comentar líneas seleccionadas como bloque",
     "undo": "Deshacer última acción",
     "redo": "Rehacer acción deshecha",
     "terminal": "Mostrar/ocultar terminal integrada",

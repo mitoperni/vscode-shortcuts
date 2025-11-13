@@ -8,6 +8,39 @@ const ShortcutCard = ({ shortcut }) => {
 
   const isFavorite = favorites.includes(shortcut.id)
 
+  // Format shortcut text to split into parts and replace arrows with icons
+  const formatShortcutWithIcons = (text) => {
+    const parts = []
+    let currentText = ''
+
+    for (let i = 0; i < text.length; i++) {
+      const char = text[i]
+
+      if (char === '↑') {
+        if (currentText) parts.push(currentText)
+        parts.push(<i key={`up-${i}`} className="bi bi-arrow-up"></i>)
+        currentText = ''
+      } else if (char === '↓') {
+        if (currentText) parts.push(currentText)
+        parts.push(<i key={`down-${i}`} className="bi bi-arrow-down"></i>)
+        currentText = ''
+      } else if (char === '←') {
+        if (currentText) parts.push(currentText)
+        parts.push(<i key={`left-${i}`} className="bi bi-arrow-left"></i>)
+        currentText = ''
+      } else if (char === '→') {
+        if (currentText) parts.push(currentText)
+        parts.push(<i key={`right-${i}`} className="bi bi-arrow-right"></i>)
+        currentText = ''
+      } else {
+        currentText += char
+      }
+    }
+
+    if (currentText) parts.push(currentText)
+    return parts
+  }
+
   return (
     <div className="card h-100 shortcut-card">
       <div className="card-body">
@@ -26,7 +59,7 @@ const ShortcutCard = ({ shortcut }) => {
         {/* Keyboard Shortcut */}
         <div className="mb-3">
           <kbd className="user-select-all">
-            {os === 'windows' ? shortcut.windows : shortcut.mac}
+            {formatShortcutWithIcons(os === 'windows' ? shortcut.windows : shortcut.mac)}
           </kbd>
         </div>
 
