@@ -32,8 +32,8 @@ const Shortcuts = () => {
       {/* Top 10 Most Used Shortcuts Banner */}
       {!hasActiveFilters && <TopShortcutsBanner />}
 
-      {/* Search and Filter Bar - Sticky */}
-      <div className="pt-3 pb-3 mb-4" style={{ zIndex: 1020 }}>
+      {/* Search and Filter Bar */}
+      <div className="pb-3 mb-4">
         {/* OS Toggle & Search Bar */}
         <div className="mb-3 d-flex flex-column flex-lg-row align-items-center justify-content-between gap-3">
           {/* OS Toggle */}
