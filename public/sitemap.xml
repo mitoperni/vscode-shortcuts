@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Homepage -->
+  <url>
+    <loc>https://vscode-shortcuts.vercel.app/</loc>
+    <lastmod>2025-11-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vscode-shortcuts.vercel.app/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://vscode-shortcuts.vercel.app/" />
+  </url>
+
+  <!-- VS Code Shortcuts Page -->
+  <url>
+    <loc>https://vscode-shortcuts.vercel.app/shortcuts</loc>
+    <lastmod>2025-11-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vscode-shortcuts.vercel.app/shortcuts" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://vscode-shortcuts.vercel.app/shortcuts" />
+  </url>
+
+  <!-- Git Commands Page -->
+  <url>
+    <loc>https://vscode-shortcuts.vercel.app/git</loc>
+    <lastmod>2025-11-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vscode-shortcuts.vercel.app/git" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://vscode-shortcuts.vercel.app/git" />
+  </url>
+
+  <!-- Practice Mode Page -->
+  <url>
+    <loc>https://vscode-shortcuts.vercel.app/practice</loc>
+    <lastmod>2025-11-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vscode-shortcuts.vercel.app/practice" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://vscode-shortcuts.vercel.app/practice" />
+  </url>
+
+</urlset>
