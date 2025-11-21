@@ -6,6 +6,7 @@ Interactive web application to learn VS Code keyboard shortcuts and Git commands
 ![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3.2-purple)
 ![i18n](https://img.shields.io/badge/i18n-Bilingual-green)
 ![License](https://img.shields.io/badge/License-UNLICENSED-red)
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/mitoperni/vscode-shortcuts)
 
 ## 🌟 Features
 
@@ -356,11 +357,12 @@ This project is proprietary and confidential. Unauthorized copying, distribution
 
 If you have questions or need help:
 
-1. Check this README first
-2. Look at the code comments
-3. [Report a bug](https://github.com/mitoperni/vscode-shortcuts/issues/new?labels=bug&template=bug_report.md) or [suggest an improvement](https://github.com/mitoperni/vscode-shortcuts/issues/new?labels=enhancement&template=feature_request.md)
-4. Browse existing [GitHub Issues](https://github.com/mitoperni/vscode-shortcuts/issues)
-5. Contact the author via [GitHub](https://github.com/mitoperni) or [LinkedIn](https://www.linkedin.com/in/migueltoyaspernichi/)
+1. **Ask DeepWiki** - Click the [Ask DeepWiki badge](https://deepwiki.com/mitoperni/vscode-shortcuts) at the top to get instant AI-powered answers about the codebase, features, and implementation details
+2. Check this README first
+3. Look at the code comments
+4. [Report a bug](https://github.com/mitoperni/vscode-shortcuts/issues/new?labels=bug&template=bug_report.md) or [suggest an improvement](https://github.com/mitoperni/vscode-shortcuts/issues/new?labels=enhancement&template=feature_request.md)
+5. Browse existing [GitHub Issues](https://github.com/mitoperni/vscode-shortcuts/issues)
+6. Contact the author via [GitHub](https://github.com/mitoperni) or [LinkedIn](https://www.linkedin.com/in/migueltoyaspernichi/)
 
 ## 🎓 Educational Value
 
@@ -391,45 +393,6 @@ If you have questions or need help:
 4. **Track Progress** - Mark shortcuts as learned
 5. **Customize** - Mark favorites for quick reference
 6. **Git Workflow** - Follow the recommended workflow section
-
-## 🐛 Known Issues
-
-None at the moment! Report bugs via GitHub Issues.
-
-## 🔮 Future Enhancements
-
-Potential features for future versions:
-- [ ] Export progress to PDF
-- [ ] Keyboard shortcut tester (press keys to verify)
-- [ ] More languages (French, German, Portuguese)
-- [ ] Spaced repetition algorithm
-- [ ] Social sharing features
-- [ ] Leaderboard (optional backend)
-- [ ] VS Code themes preview
-- [ ] Extension recommendations
-- [ ] Video tutorials integration
-
-## 📈 Version History
-
-### v1.1.0 (2025-01-12)
-- Refactored to professional component architecture
-- Added React Router for navigation
-- Implemented Context API for state management
-- Added custom hooks for business logic
-- Improved performance with lazy initialization
-- Fixed page load flash issue
-- Default sorting by relevance
-- Enhanced code organization and maintainability
-
-### v1.0.0 (2025-01-11)
-- Initial release
-- 122 VS Code shortcuts
-- 51 Git commands
-- Bilingual support (EN/ES)
-- Practice mode
-- Favorites and progress tracking
-- Dark theme
-- Responsive design
 
 ---
 
